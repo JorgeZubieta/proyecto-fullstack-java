@@ -28,7 +28,7 @@ public class Conexion {
             //me trae la dependecnia del archivo correspondiente
             Class.forName(driver);
             //nombre de mi BD a utilizar, usuario y password (*ver)
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost3306/CryptoBlog","root","administrador");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/CryptoBlog","root","administrador");
         }
         catch(ClassNotFoundException | SQLException e) {
             System.out.println( e.toString() );
@@ -61,7 +61,7 @@ public class Conexion {
             String apellido=rs.getString("apellido");
             String mail=rs.getString("mail");        
             
-            System.out.println("id: "+id+" nombre: "+nombre+" Apellido: "+apellido+"E-Mail: "+mail);
+            System.out.println("ID: "+id+" - NOMBRE: "+nombre+" - APELLIDO: "+apellido+" - E-MAIL: "+mail);
         }
 
     }    
