@@ -101,9 +101,26 @@ public class UsuariosDAO {
     
     
     }
-    
+
     //metodo para insertar usuarios
     //pasamos un objetodel tipo usurios
+    public boolean insertarUsuario(Usuarios usuario){
+        PreparedStatement ps;
+        try{
+            ps=conexion.prepareStatement("INSERT INTO usuarios(nombre,apellido,mail) VALUES (?,?,?)");
+            ps.setString(1, usuario.getNombre());
+            ps.setString(2, usuario.getApellido());
+            ps.setString(3, usuario.getMail());
+            ps.execute();
+            return true;
+
+        }
+        catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+    
     public boolean actualizarUsuario(Usuarios usuario){
         PreparedStatement ps;
         try{
