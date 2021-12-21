@@ -18,6 +18,24 @@
         
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Listado de Usuarios</h1>
+        
+        <div class = "container">
+            <div class = "row">
+                <a class="btn btn-primary col-4 m-4" href="UsersController?accion=nuevo">Agregar usuario</a>
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>E-MAIL</th>
+                            <th>MODIFICAR</th>
+                            <th>ELIMINAR</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </body>
 </html>
