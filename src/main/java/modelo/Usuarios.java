@@ -11,7 +11,7 @@ package modelo;
 public class Usuarios {
     private int id;
     private String nombre;
-    private String apellidp;
+    private String apellido;
     private String mail;
 
     Usuarios(int id, String nombre, String apellido, String mail) {
@@ -34,12 +34,12 @@ public class Usuarios {
         this.nombre = nombre;
     }
 
-    public String getApellidp() {
-        return apellidp;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidp(String apellidp) {
-        this.apellidp = apellidp;
+    public void setApellido(String apellidp) {
+        this.apellido = apellidp;
     }
 
     public String getMail() {
@@ -50,9 +50,9 @@ public class Usuarios {
         this.mail = mail;
     }
 
-    String getApellido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    String getApellido() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
     
 }

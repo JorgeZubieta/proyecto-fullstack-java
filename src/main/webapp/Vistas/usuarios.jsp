@@ -4,6 +4,9 @@
     Author     : jorgezubieta
 --%>
 
+<%@page import="modelo.UsuariosDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,6 +37,28 @@
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
+                    <!-- Antes de cirre de la tabla inseertamos codigo Java el que me va adevolver infomacionnde la bd  -->
+                    <%
+                        //codigo java
+                        List<Usuarios> resultado=null;
+                        UsuariosDAO usuario=new UsuariosDAO();
+                        resultado=usuario.listarUsuarios();
+
+                        for(int i=0;i<resultado.size();i++){
+                            String ruta="UsuariosController?accion=modificar="+resultado.get(i).getId();
+                            String rutaE="UsuariosController?accion=eliminar="+resultado.get(i).getId();
+                            %>
+                                <tr>
+                                    <td><%=resultado.get(i).getId()%></td>
+                                    <td><%=resultado.get(i).getNombre()%></td>
+                                    <td><%=resultado.get(i).getApellido()%></td>
+                                    <td><%=resultado.get(i).getMail()%></td>
+                                    <td><a class="text-success" href=<%=ruta%> >X</a> </td>                        
+                                    <td><a class="text-success" href=<%=rutaE%> >X</a> </td>                        
+                                </tr>
+                            <%
+                       }
+                    %>
                 </table>
             </div>
         </div>
